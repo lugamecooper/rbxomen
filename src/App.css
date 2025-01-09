@@ -1,9 +1,34 @@
+@font-face {
+  font-family: 'AlexanderQuillW01-Regular'; 
+	src: url("AlexanderQuillW01-Regular.ttf") format("truetype")
+}
+
 .header{
   height: 46px;
   max-height: 46px;
-  background-color: black;
-  z-index: 3;
+  width: 100%;
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: 0.3s;
 }
-.header canvas{
+.header p{
+  font-family: "AlexanderQuillW01-Regular";
+  font-size: 40px;
+}
+.header .background{
+  z-index: 1;
+  float: left;
+  position: absolute;
+  background-color: rgb(51, 48, 48);
+  height: 120px;
+  width: 100%;
+}
+.welcome_div{
+  padding-top: 600px;
+  height: 46px;
+  max-height: 46px;
+  width: 100%;
   z-index: 1;
 }
