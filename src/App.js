@@ -42,6 +42,7 @@ const OverlapDetector = () => {
 
     // Cleanup on component unmount
     return () => {
+      // eslint-disable-next-line
       window.removeEventListener("scroll", checkOverlapOnScroll);
     };
   }, []); // Dependency array empty to run only on mount/unmount
@@ -54,12 +55,16 @@ const OverlapDetector = () => {
         style={{
           backgroundColor: isOverlapping ? "#ffffff00" : "rgb(51, 48, 48)",
         }}
-      ><p>test</p></div>
+      ><img alt="logo omen dev" src="/src/placeholder.jpg"></img>
+      <a>support</a>
+      <a>links</a>
+      <a>teams</a>
+      <a>games</a>
+      </div>
       <div
         ref={targetElementRef}
         className="welcome_div"
-        
-      >test 2</div>
+      ></div>
 
       <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
       <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
@@ -70,7 +75,7 @@ const OverlapDetector = () => {
       <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
       <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
       <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
-      <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>s
+      <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
     </div>
   );
 };

@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'AlexanderQuillW01-Regular'; 
-	src: url("AlexanderQuillW01-Regular.ttf") format("truetype")
+	src: url("../public/src/AlexanderQuillW01-Regular.ttf") format("truetype")
 }
 
 .header{
-  height: 46px;
-  max-height: 46px;
+  height: 60px;
+  max-height: 60px;
   width: 100%;
   z-index: 10;
   position: fixed;
@@ -13,22 +13,33 @@
   left: 0;
   transition: 0.3s;
 }
-.header p{
+.header a{
   font-family: "AlexanderQuillW01-Regular";
-  font-size: 40px;
+  font-size: 20px;
+  float: right;
+  margin-top: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding: 10px;
 }
-.header .background{
-  z-index: 1;
-  float: left;
-  position: absolute;
-  background-color: rgb(51, 48, 48);
-  height: 120px;
-  width: 100%;
+.header a:hover{
+  color: red;
 }
+.header .active{
+  color: red;
+}
+.header img{
+  height: 60px;
+  width: 60px;
+}
+
+
+/* this div contains */
 .welcome_div{
-  padding-top: 600px;
-  height: 46px;
-  max-height: 46px;
+  height: 400px;
+  max-height: 400px;
   width: 100%;
-  z-index: 1;
+  background-image: url("../public/src/placeholder.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
