@@ -20,6 +20,7 @@ const OverlapDetector = () => {
     );
   };
 
+// eslint-disable-next-line
   const checkOverlapOnScroll = () => {
     const hoverElement = hoverElementRef.current;
     const targetElement = targetElementRef.current;
@@ -31,21 +32,23 @@ const OverlapDetector = () => {
     }
   };
 
-  // eslint-disable-next-line
+// eslint-disable-next-line
   useEffect(() => {
     // Attach the scroll event listener
+// eslint-disable-next-line
     window.addEventListener("scroll", checkOverlapOnScroll);
 
     // Initial check for overlap
-    // eslint-disable-next-line
+// eslint-disable-next-line
     checkOverlapOnScroll();
 
     // Cleanup on component unmount
     return () => {
-      // eslint-disable-next-line
+// eslint-disable-next-line
       window.removeEventListener("scroll", checkOverlapOnScroll);
     };
-  }, []); // Dependency array empty to run only on mount/unmount
+// eslint-disable-next-line
+  },[]); // Dependency array empty to run only on mount/unmount
 
   return (
     <div>
@@ -56,10 +59,10 @@ const OverlapDetector = () => {
           backgroundColor: isOverlapping ? "#ffffff00" : "rgb(51, 48, 48)",
         }}
       ><img alt="logo omen dev" src="/src/placeholder.jpg"></img>
-      <a>support</a>
-      <a>links</a>
-      <a>teams</a>
-      <a>games</a>
+      <a href="https://easy.gg/">support</a>
+      <a href="https://easy.gg/">links</a>
+      <a href="https://easy.gg/">teams</a>
+      <a href="https://easy.gg/">games</a>
       </div>
       <div
         ref={targetElementRef}
