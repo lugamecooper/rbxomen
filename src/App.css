@@ -21,6 +21,8 @@
   margin-left: 5px;
   margin-right: 5px;
   padding: 10px;
+  text-decoration: none;
+  color: black;
 }
 .header a:hover{
   color: red;
@@ -28,18 +30,93 @@
 .header .active{
   color: red;
 }
-.header img{
+.header .logo{
+  float: left;
+  padding: 0px;
+  margin: -2px;
+}
+.header .logo img{
   height: 60px;
   width: 60px;
 }
 
-
-/* this div contains */
-.welcome_div{
+.welcomeDiv{
   height: 400px;
   max-height: 400px;
   width: 100%;
   background-image: url("../public/src/placeholder.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
+}
+
+footer{
+  background-color: rgb(51, 48, 48);
+  text-align: center;
+}
+footer img{
+  height: 80px;
+  width: 80px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+footer a{
+  text-decoration: none;
+  color: red;
+}
+footer p{
+  margin: 0px;
+}
+footer .legal_right{
+  color: rgba(255, 255, 255, 0.644);
+}
+
+.LinkTree{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 20px;
+}
+.LinkTree img{
+  height: 30px;
+  width: 30px;
+  display: inline;
+  margin-right: 6px;
+  padding: 2px;
+}
+.LinkTree img:hover{
+  filter: invert(1);
+  background-color: rgb(182, 175, 175);
+}
+
+.DevelopersContainer{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+.Developpers{
+  display: inline-block;
+  position: relative;
+  text-align: center;
+}
+.Developpers img{
+  margin: 6px;
+  clip-path: circle(50%);
+}
+.Developpers span{
+  visibility: hidden;
+  width: 120px;
+  background-color: rgb(51, 48, 48);
+  color: #fff;
+  text-align: center;
+  border-radius: 30px;
+  padding: 5px;
+  position: absolute;
+  top: -30px;
+  left: 42.3px;
+}
+.Developpers:hover span{
+  visibility: visible;
 }
