@@ -60,11 +60,10 @@ const Layout = () => {
     };
     // eslint-disable-next-line
     },[]);
+    const ClassHeader = "header"
     const Background = RandomBackground();
     if (isMobile){
         const ClassHeader = "header mobile"
-    }else{
-        const ClassHeader = "header"
     }
     return (
         <div style={{backgroundImage : `url("/src/background/${Background}")`}} className="globalDiv">

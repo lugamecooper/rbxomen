@@ -101,17 +101,21 @@ footer .legal_right{
   gap: 10px;
   width: 400px;
   min-width: 300px;
+  position: relative;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
 }
 .Developpers{
   display: inline-block;
   position: relative;
   text-align: center;
-
+  height: 120px;
 }
 .Developpers img{
   margin: 6px;
   clip-path: circle(50%);
-  height: 30%;
+  height: 75px;
   margin-top: 30px;
 }
 .Developpers span{
@@ -124,7 +128,7 @@ footer .legal_right{
   padding: 5px;
   position: absolute;
   top: -2px;
-  left: 65.3px;
+  left: 0px;
 }
 .Developpers:hover span{
   visibility: visible;
@@ -135,4 +139,10 @@ footer .legal_right{
 }
 .alternate2{
   background-color: #686868;
+}
+
+.home{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
