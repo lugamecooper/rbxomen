@@ -1,11 +1,23 @@
 import { Outlet } from "react-router-dom";
 import { Link } from "react-router-dom";
 import React, { useEffect, useRef, useState } from "react";
-import "../App.css"
-import config from "../config.json"
-import Footer from "../elements/Footer"
+import { isMobile } from 'react-device-detect';
+import "../App.css";
+import config from "../config.json";
+import Footer from "../elements/Footer";
 
 const Layout = () => {
+    const RandomBackground = () =>{
+        const RandomBackgroundNumber =  Math.floor(Math.random() * 4) + 1;
+        switch (RandomBackgroundNumber){
+            case 1:  return "background1.jpg";
+            case 2:  return "background2.jpg";
+            case 3:  return "background3.jpg";
+            case 4:  return "background4.jpg";
+            default: return "background1.jpg";
+        }
+    }
+
     const hoverElementRef = useRef(null);
     const targetElementRef = useRef(null);
     const [isOverlapping, setIsOverlapping] = useState(true);
@@ -38,26 +50,26 @@ const Layout = () => {
 
     // eslint-disable-next-line
     useEffect(() => {
-    // Attach the scroll event listener
     // eslint-disable-next-line
     window.addEventListener("scroll", checkOverlapOnScroll);
-
-    // Initial check for overlap
     // eslint-disable-next-line
     checkOverlapOnScroll();
-
-    // Cleanup on component unmount
     return () => {
         // eslint-disable-next-line
         window.removeEventListener("scroll", checkOverlapOnScroll);
     };
     // eslint-disable-next-line
-    },[]); // Dependency array empty to run only on mount/unmount
-
+    },[]);
+    const Background = RandomBackground();
+    if (isMobile){
+        const ClassHeader = "header mobile"
+    }else{
+        const ClassHeader = "header"
+    }
     return (
-        <>
+        <div style={{backgroundImage : `url("/src/background/${Background}")`}} className="globalDiv">
             <div>
-                <div ref={hoverElementRef} className="header" style={{backgroundColor: isOverlapping ? "#ffffff00" : "rgb(51, 48, 48)",}}>
+                <div ref={hoverElementRef} className={ClassHeader} style={{backgroundColor: isOverlapping ? "#ffffff00" : "rgb(51, 48, 48)",}}>
                     <Link className="logo" to="/"><img alt="logo omen dev" src="/src/logo_omen_dev.png"></img></Link>
                     <Link to="/jobs">jobs</Link>
                     <Link to="/support">support</Link>
@@ -70,7 +82,7 @@ const Layout = () => {
                 </Outlet> 
             </div>
             <Footer email={config["email"]}></Footer>
-        </>
+        </div>
     );
 };
 

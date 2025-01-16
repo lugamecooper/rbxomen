@@ -8,11 +8,6 @@ import Jobs from "./pages/Jobs";
 import Support from "./pages/Support";
 
 const App = () => {
-  const RandomBackground = () =>{
-    const RandomBackgroundNumber =  Math.floor(Math.random() * 4) + 1;
-    const day = Date().getDate();
-    const month = Date().getMonth() + 1;
-  }
   return (
     <BrowserRouter>
       <Routes>
