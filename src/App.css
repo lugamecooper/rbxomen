@@ -2,6 +2,9 @@
   font-family: 'AlexanderQuillW01-Regular'; 
 	src: url("../public/src/AlexanderQuillW01-Regular.ttf") format("truetype")
 }
+body{
+  background-color: #333030;
+}
 
 .globalDiv{
   background-repeat:no-repeat;
@@ -42,13 +45,19 @@
   height: 60px;
   width: 60px;
 }
+.header .tiny{
+  display: none;
+}
+.header .burgerIcon{
+  display: none;
+}
 
 
 .welcomeDiv{
   height: 400px;
   max-height: 400px;
   width: 100%;
-  background-image: url("../public/src/placeholder.jpg");
+  background-image: url("../public/src/header_background.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -99,7 +108,7 @@ footer .legal_right{
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
-  width: 400px;
+  width: 100%;
   min-width: 300px;
 }
 .Developpers{
@@ -135,4 +144,67 @@ footer .legal_right{
 }
 .alternate2{
   background-color: #686868;
+}
+
+/**
+this section is for modify the display for mobile and small screen
+**/
+.header_mobile{
+  height: 60px;
+  max-height: 60px;
+  width: 100%;
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: 0.3s;
+}
+.header_mobile .myLinks{
+  display: none;
+}
+.header_mobile a{
+  font-family: "AlexanderQuillW01-Regular";
+  font-size: 20px;
+  float: left;
+  margin-top: 5px;
+  margin-left: auto;
+  margin-right: 5px;
+  padding: 10px;
+  position: absolute;
+  text-decoration: none;
+  color: black;
+}
+.header_mobile a:hover{
+  color: #ff0000;
+}
+.header_mobile .logo{
+  float: left;
+  padding: 0px;
+  margin: -2px;
+}
+.header_mobile .logo img{
+  height: 60px;
+  width: 60px;
+}
+.header_mobile .tiny a{
+  width: 85%;
+  margin: auto;
+  margin-left: 5%;
+  margin-top: 18px;
+  margin-bottom: -18px;
+  position: relative;
+  background-color: #fff; 
+}
+.header_mobile .extanded{
+  display: none;
+}
+.header_mobile .burgerIcon{
+  background-image: url("../public/src/burger.png");
+  background-color: #ffffff00;
+  border: none;
+  width: 50px;
+  height: 30px;
+  float: right;
+  margin-top: 10px;
+  margin-right: 10px;
 }
