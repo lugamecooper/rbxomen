@@ -10,8 +10,10 @@ const Home = () => {
 
   return (
     <>
-      <div className="DevelopersContainer">
-        {imageGenerator(config["imageData"])}
+      <div className="Home">
+        <div className="DevelopersContainer">
+          {imageGenerator(config["imageData"])}
+        </div>
       </div>
     </>
   );
