@@ -1,5 +1,6 @@
 import Developpers from "../elements/Developpers";
 import config from "../config.json";
+import Title from "../elements/Title";
 
 const Home = () => {
   const imageGenerator = (imageConstructor) => {
@@ -11,6 +12,16 @@ const Home = () => {
   return (
     <>
       <div className="Home">
+        <div className="alternate">
+          <div className="a2">
+            <img alt="who are we image" src="src/"></img>
+            <br/><br/><br/><br/>
+            <Title text={"WHO ARE WE"}/>
+            <br/><br/>
+            <p>Omen dev is an independent roblox development studio founded on June 2023.</p>
+            <br/><br/><br/>
+          </div>
+        </div>
         <div className="DevelopersContainer">
           {imageGenerator(config["imageData"])}
         </div>
