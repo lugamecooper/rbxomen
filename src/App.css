@@ -52,6 +52,28 @@ body{
   display: none;
 }
 
+.Title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Title .strip{
+  height: 3px;
+  width: 30%;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-top: 5px;
+  background-color: #e4e4e4;
+  float: left;
+  display: block;
+}
+.Title p{
+  float: left;
+  margin: 0px;
+  font-size: 24px;
+  color: #d90d14;
+  display: block;
+}
 
 .welcomeDiv{
   height: 400px;
@@ -143,11 +165,16 @@ footer .legal_right{
   visibility: visible;
 }
 
-.alternate1{
+.alternate p{
+  margin: 0px;
+  text-align: center;
+  font-size: 30px;
+}
+.alternate .a1{
   background-color: #fff;
 }
-.alternate2{
-  background-color: #686868;
+.alternate .a2{
+  background-color: #eeeeee;
 }
 
 /**
