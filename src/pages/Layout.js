@@ -1,5 +1,4 @@
-import { Outlet } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 import React, { useEffect, useRef, useState } from "react";
 import { isMobile } from 'react-device-detect';
 import "../App.css";
