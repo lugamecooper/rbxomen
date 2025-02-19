@@ -1,5 +1,5 @@
 import Developpers from "../elements/Developpers";
-import config from "../config.json";
+import config from "../contactConfig.json";
 import Title from "../elements/Title";
 
 const Home = () => {
@@ -14,7 +14,7 @@ const Home = () => {
       <div className="Home">
         <div className="alternate">
           <div className="a2">
-            <img alt="who are we image" src="src/"></img>
+            <img alt="who are we" src="src/"></img>
             <br/><br/><br/><br/>
             <Title text={"WHO ARE WE"}/>
             <br/><br/>

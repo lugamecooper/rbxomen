@@ -1,9 +1,8 @@
-import { Outlet } from "react-router-dom";
-import { Link } from "react-router-dom";
-import React, { useEffect, useRef, useState } from "react";
+import { Outlet, Link } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
 import { isMobile } from 'react-device-detect';
 import "../App.css";
-import config from "../config.json";
+import config from "../contactConfig.json";
 import Footer from "../elements/Footer";
 
 const Layout = () => {
@@ -45,18 +44,18 @@ const Layout = () => {
     const [ClassHeader, setClassHeader] = useState("header");
     
     const isHovering = (element1, element2) => {
-    if (!element1 || !element2) {
-        return false;
-    }
+        if (!element1 || !element2) {
+            return false;
+        }
 
-    const rect1 = element1.getBoundingClientRect();
-    const rect2 = element2.getBoundingClientRect();
+        const rect1 = element1.getBoundingClientRect();
+        const rect2 = element2.getBoundingClientRect();
 
-    return !(
-        rect1.right < rect2.left ||
-        rect1.left > rect2.right ||
-        rect1.bottom < rect2.top ||
-        rect1.top > rect2.bottom
+        return !(
+            rect1.right < rect2.left ||
+            rect1.left > rect2.right ||
+            rect1.bottom < rect2.top ||
+            rect1.top > rect2.bottom
     );};
 
     const checkOverlapOnScroll = () => {
@@ -108,7 +107,7 @@ const Layout = () => {
                 <div ref={targetElementRef} className="welcomeDiv">
                 </div>
                 <Outlet>
-                </Outlet> 
+                </Outlet>
             </div>
             <Footer email={config["email"]}></Footer>
         </div>
