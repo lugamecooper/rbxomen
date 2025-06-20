@@ -7,8 +7,8 @@ import Footer from "../elements/Footer";
 
 const Layout = () => {
     const burgerMenu = () => {
-        const list = document.getElementById("myLinks");
-        if (list.style.display === "block") {
+        const list = document.getElementById( "myLinks" );
+        if ( list.style.display === "block" ) {
             list.style.display = "none";
         } else {
             list.style.display = "block";
@@ -16,20 +16,20 @@ const Layout = () => {
     }
 
     const isMobileHeader = () =>{
-        if (isMobile){
-            setClassHeader("header_mobile");
-            document.getElementById("myLinks").style.display = "none";
-        }else if(window.innerWidth < 600){
-            setClassHeader("header_mobile")
-            document.getElementById("myLinks").style.display = "none";
+        if ( isMobile ){
+            setClassHeader( "header_mobile" );
+            document.getElementById( "myLinks" ).style.display = "none";
+        }else if( window.innerWidth < 600 ){
+            setClassHeader( "header_mobile" )
+            document.getElementById( "myLinks" ).style.display = "none";
         }else{
-            setClassHeader("header")
+            setClassHeader( "header" )
         }
     }
 
     const RandomBackground = () =>{
-        const RandomBackgroundNumber =  Math.floor(Math.random() * 4) + 1;
-        switch (RandomBackgroundNumber){
+        const RandomBackgroundNumber =  Math.floor( Math.random() * 4 ) + 1;
+        switch ( RandomBackgroundNumber ){
             case 1:  return "background1.jpg";
             case 2:  return "background2.jpg";
             case 3:  return "background3.jpg";
@@ -38,13 +38,13 @@ const Layout = () => {
         }
     }
 
-    const hoverElementRef = useRef(null);
-    const targetElementRef = useRef(null);
-    const [isOverlapping, setIsOverlapping] = useState(true);
-    const [ClassHeader, setClassHeader] = useState("header");
+    const hoverElementRef = useRef( null );
+    const targetElementRef = useRef( null );
+    const [ isOverlapping, setIsOverlapping ] = useState( true );
+    const [ ClassHeader, setClassHeader ] = useState( "header" );
     
-    const isHovering = (element1, element2) => {
-        if (!element1 || !element2) {
+    const isHovering = ( element1, element2 ) => {
+        if ( !element1 || !element2 ) {
             return false;
         }
 
@@ -62,28 +62,28 @@ const Layout = () => {
     const hoverElement = hoverElementRef.current;
     const targetElement = targetElementRef.current;
 
-    if (isHovering(hoverElement, targetElement)) {
-        setIsOverlapping(true);
+    if ( isHovering( hoverElement, targetElement ) ) {
+        setIsOverlapping( true );
     } else {
-        setIsOverlapping(false);
+        setIsOverlapping( false );
     }};
 
-    useEffect(() => {
-        window.addEventListener("scroll", checkOverlapOnScroll);
-        window.addEventListener('resize', isMobileHeader);
+    useEffect( () => {
+        window.addEventListener( 'scroll', checkOverlapOnScroll );
+        window.addEventListener( 'resize', isMobileHeader );
         checkOverlapOnScroll();
         isMobileHeader();
         return () => {
-            window.removeEventListener("scroll", checkOverlapOnScroll);
-            window.removeEventListener('resize', isMobileHeader);
+            window.removeEventListener( 'scroll', checkOverlapOnScroll );
+            window.removeEventListener( 'resize', isMobileHeader );
         };
     });
     const Background = RandomBackground();
     
     return (
-        <div style={{backgroundImage : `url("/src/background/${Background}")`}} className="globalDiv">
+        <div style={ { backgroundImage : `url("/src/background/${Background}")` } } className="globalDiv">
             <div>
-                <div ref={hoverElementRef} className={ClassHeader} style={{backgroundColor: isOverlapping ? "#ffffff00" : "rgb(51, 48, 48)",}}>
+                <div ref={ hoverElementRef } className={ ClassHeader } style={ { backgroundColor: isOverlapping ? "#ffffff00" : "rgb(51, 48, 48)" } }>
                     <Link className="logo" to="/"><img alt="logo omen dev" src="/src/logo_omen_dev.png"></img></Link>
                     <div className="extanded">    
                         {
@@ -109,7 +109,7 @@ const Layout = () => {
                 <Outlet>
                 </Outlet>
             </div>
-            <Footer email={config["email"]}></Footer>
+            <Footer email={ config["email"] }></Footer>
         </div>
     );
 };

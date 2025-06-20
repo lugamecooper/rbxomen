@@ -3,8 +3,8 @@ import config from "../contactConfig.json";
 import Title from "../elements/Title";
 
 const Home = () => {
-  const imageGenerator = (imageConstructor) => {
-    return imageConstructor.map(([link, image, name], index) => (
+  const imageGenerator = ( imageConstructor ) => {
+    return imageConstructor.map( ( [link, image, name], index ) => (
       <Developpers key={index} link={link} image={image} name={name}/>
     ));
   };
@@ -16,14 +16,14 @@ const Home = () => {
           <div className="a2">
             <img alt="who are we" src="src/"></img>
             <br/><br/><br/><br/>
-            <Title text={"WHO ARE WE"}/>
+            <Title text={ "WHO ARE WE" }/>
             <br/><br/>
             <p>Omen dev is an independent roblox development studio founded on June 2023.</p>
             <br/><br/><br/>
           </div>
         </div>
         <div className="DevelopersContainer">
-          {imageGenerator(config["imageData"])}
+          { imageGenerator( config["Developers"] ) }
         </div>
       </div>
     </>
