@@ -8,20 +8,20 @@ import Jobs from "./pages/Jobs";
 import Support from "./pages/Support";
 
 const App = () => {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout/>}>
-        <Route index element={<Home/>}/>
-        <Route path="contact" element={<Contact/>}/>
-        <Route path="game" element={<Game/>}/>
-        <Route path="jobs" element={<Jobs/>}/>
-        <Route path="support" element={<Support/>}/>
-      </Route>
-      <Route path="*" element={<NoPage/>}/>
-      </Routes>
-    </BrowserRouter>
-  );
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<Layout/>}>
+                <Route index element={<Home/>}/>
+                <Route path="contact" element={<Contact/>}/>
+                <Route path="game" element={<Game/>}/>
+                <Route path="jobs" element={<Jobs/>}/>
+                <Route path="support" element={<Support/>}/>
+            </Route>
+            <Route path="*" element={<NoPage/>}/>
+            </Routes>
+        </BrowserRouter>
+    );
 }
 
 export default App;
