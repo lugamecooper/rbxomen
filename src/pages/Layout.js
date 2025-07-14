@@ -6,12 +6,31 @@ import config from "../contactConfig.json";
 import Footer from "../elements/Footer";
 
 const Layout = () => {
+
+    const line1 = useRef(null);
+    const line2 = useRef(null);
+    const line3 = useRef(null);
+
     const burgerMenu = () => {
         const list = document.getElementById( "myLinks" );
         if ( list.style.display === "block" ) {
             list.style.display = "none";
+            line1.current.style.transform = '';
+            line1.current.style.width = '';
+            line1.current.style.height = '';
+            line2.current.style.opacity = '';
+            line3.current.style.transform = '';
+            line3.current.style.width = '';
+            line3.current.style.height = '';
         } else {
             list.style.display = "block";
+            line1.current.style.transform = 'translateY(6px) rotate(45deg)';
+            line1.current.style.width = '18.5px';
+            line1.current.style.height = '0.5px';
+            line2.current.style.opacity = '0';
+            line3.current.style.transform = 'translateY(-6px) rotate(-45deg)';
+            line3.current.style.width = '18.5px';
+            line3.current.style.height = '0.5px';
         }
     }
 
@@ -23,7 +42,7 @@ const Layout = () => {
             setClassHeader( "header_mobile" )
             document.getElementById( "myLinks" ).style.display = "none";
         }else{
-            setClassHeader( "header" )
+            setClassHeader("header");
         }
     }
 
@@ -94,7 +113,11 @@ const Layout = () => {
                         <Link to="/game">game</Link>
                     </div>
                     <div className="tiny">
-                        <button className="burgerIcon" onClick={burgerMenu}/>
+                        <button className="burgerIcon" onClick={burgerMenu}>
+                            <del ref={line1}/>
+                            <del ref={line2}/>
+                            <del ref={line3}/>
+                        </button>
                         <div id="myLinks">
                             <br/>
                             <br/>
