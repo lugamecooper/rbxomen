@@ -6,33 +6,12 @@ import config from "../contactConfig.json";
 import Footer from "../elements/Footer";
 
 const Layout = () => {
-
-    const line1 = useRef(null);
-    const line2 = useRef(null);
-    const line3 = useRef(null);
-
     const burgerMenu = () => {
         const list = document.getElementById( "myLinks" );
         if ( list.style.display === "block" ) {
-        const list = document.getElementById( "myLinks" );
-        if ( list.style.display === "block" ) {
             list.style.display = "none";
-            line1.current.style.transform = '';
-            line1.current.style.width = '';
-            line1.current.style.height = '';
-            line2.current.style.opacity = '';
-            line3.current.style.transform = '';
-            line3.current.style.width = '';
-            line3.current.style.height = '';
         } else {
             list.style.display = "block";
-            line1.current.style.transform = 'translateY(6px) rotate(45deg)';
-            line1.current.style.width = '18.5px';
-            line1.current.style.height = '0.5px';
-            line2.current.style.opacity = '0';
-            line3.current.style.transform = 'translateY(-6px) rotate(-45deg)';
-            line3.current.style.width = '18.5px';
-            line3.current.style.height = '0.5px';
         }
     }
 
@@ -43,20 +22,12 @@ const Layout = () => {
         }else if( window.innerWidth < 600 ){
             setClassHeader( "header_mobile" )
             document.getElementById( "myLinks" ).style.display = "none";
-        if ( isMobile ){
-            setClassHeader( "header_mobile" );
-            document.getElementById( "myLinks" ).style.display = "none";
-        }else if( window.innerWidth < 600 ){
-            setClassHeader( "header_mobile" )
-            document.getElementById( "myLinks" ).style.display = "none";
         }else{
-            setClassHeader("header");
+            setClassHeader( "header" )
         }
     }
 
     const RandomBackground = () =>{
-        const RandomBackgroundNumber =  Math.floor( Math.random() * 4 ) + 1;
-        switch ( RandomBackgroundNumber ){
         const RandomBackgroundNumber =  Math.floor( Math.random() * 4 ) + 1;
         switch ( RandomBackgroundNumber ){
             case 1:  return "background1.jpg";
@@ -71,13 +42,7 @@ const Layout = () => {
     const targetElementRef = useRef( null );
     const [ isOverlapping, setIsOverlapping ] = useState( true );
     const [ ClassHeader, setClassHeader ] = useState( "header" );
-    const hoverElementRef = useRef( null );
-    const targetElementRef = useRef( null );
-    const [ isOverlapping, setIsOverlapping ] = useState( true );
-    const [ ClassHeader, setClassHeader ] = useState( "header" );
     
-    const isHovering = ( element1, element2 ) => {
-        if ( !element1 || !element2 ) {
     const isHovering = ( element1, element2 ) => {
         if ( !element1 || !element2 ) {
             return false;
@@ -99,16 +64,10 @@ const Layout = () => {
 
     if ( isHovering( hoverElement, targetElement ) ) {
         setIsOverlapping( true );
-    if ( isHovering( hoverElement, targetElement ) ) {
-        setIsOverlapping( true );
     } else {
-        setIsOverlapping( false );
         setIsOverlapping( false );
     }};
 
-    useEffect( () => {
-        window.addEventListener( 'scroll', checkOverlapOnScroll );
-        window.addEventListener( 'resize', isMobileHeader );
     useEffect( () => {
         window.addEventListener( 'scroll', checkOverlapOnScroll );
         window.addEventListener( 'resize', isMobileHeader );
@@ -117,17 +76,13 @@ const Layout = () => {
         return () => {
             window.removeEventListener( 'scroll', checkOverlapOnScroll );
             window.removeEventListener( 'resize', isMobileHeader );
-            window.removeEventListener( 'scroll', checkOverlapOnScroll );
-            window.removeEventListener( 'resize', isMobileHeader );
         };
     });
     const Background = RandomBackground();
     
     return (
         <div style={ { backgroundImage : `url("/src/background/${Background}")` } } className="globalDiv">
-        <div style={ { backgroundImage : `url("/src/background/${Background}")` } } className="globalDiv">
             <div>
-                <div ref={ hoverElementRef } className={ ClassHeader } style={ { backgroundColor: isOverlapping ? "#ffffff00" : "rgb(51, 48, 48)" } }>
                 <div ref={ hoverElementRef } className={ ClassHeader } style={ { backgroundColor: isOverlapping ? "#ffffff00" : "rgb(51, 48, 48)" } }>
                     <Link className="logo" to="/"><img alt="logo omen dev" src="/src/logo_omen_dev.png"></img></Link>
                     <div className="extanded">    
@@ -139,11 +94,7 @@ const Layout = () => {
                         <Link to="/game">game</Link>
                     </div>
                     <div className="tiny">
-                        <button className="burgerIcon" onClick={burgerMenu}>
-                            <del ref={line1}/>
-                            <del ref={line2}/>
-                            <del ref={line3}/>
-                        </button>
+                        <button className="burgerIcon" onClick={burgerMenu}/>
                         <div id="myLinks">
                             <br/>
                             <br/>
@@ -158,7 +109,6 @@ const Layout = () => {
                 <Outlet>
                 </Outlet>
             </div>
-            <Footer email={ config["email"] }></Footer>
             <Footer email={ config["email"] }></Footer>
         </div>
     );
