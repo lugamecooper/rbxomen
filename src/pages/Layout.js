@@ -1,4 +1,4 @@
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link, useLocation } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import { isMobile } from 'react-device-detect';
 import "../App.css";
@@ -11,9 +11,12 @@ const Layout = () => {
     const line2 = useRef(null);
     const line3 = useRef(null);
 
-    const burgerMenu = () => {
+    const burgerMenu = (force = null) => {
         const list = document.getElementById( "myLinks" );
-        if ( list.style.display === "block" ) {
+        if ( list.style.display === "block" || force === "true") {
+            console.log('hide');
+            console.log(list.style.display)
+            console.log(force)
             list.style.display = "none";
             line1.current.style.transform = '';
             line1.current.style.width = '';
@@ -23,6 +26,8 @@ const Layout = () => {
             line3.current.style.width = '';
             line3.current.style.height = '';
         } else {
+            console.log('display');
+            console.log(list.style.display)
             list.style.display = "block";
             line1.current.style.transform = 'translateY(6px) rotate(45deg)';
             line1.current.style.width = '18.5px';
@@ -38,13 +43,24 @@ const Layout = () => {
         if ( isMobile ){
             setClassHeader( "header_mobile" );
             document.getElementById( "myLinks" ).style.display = "none";
+            return true;
         }else if( window.innerWidth < 600 ){
             setClassHeader( "header_mobile" )
             document.getElementById( "myLinks" ).style.display = "none";
+            return true;
         }else{
             setClassHeader("header");
+            return false;
         }
     }
+
+    const location = useLocation();
+
+    useEffect(() => {
+        if (isMobileHeader()){
+            burgerMenu("true");
+        }
+    }, [location]);
 
     const RandomBackground = () =>{
         const RandomBackgroundNumber =  Math.floor( Math.random() * 4 ) + 1;
@@ -111,6 +127,7 @@ const Layout = () => {
                         <Link to="/support">support</Link>
                         <Link to="/contact">contact</Link>
                         <Link to="/game">game</Link>
+                        <Link to="/history">history</Link>
                     </div>
                     <div className="tiny">
                         <button className="burgerIcon" onClick={burgerMenu}>
@@ -119,11 +136,15 @@ const Layout = () => {
                             <del ref={line3}/>
                         </button>
                         <div id="myLinks">
+                            {
+                            //<Link to="/jobs">jobs</Link>
+                            }
                             <br/>
                             <br/>
                             <Link to="/support">support</Link><br/>
                             <Link to="/contact">contact</Link><br/>
-                            <Link to="/game">game</Link>
+                            <Link to="/game">game</Link><br/>
+                            <Link to="/history">history</Link>
                         </div>
                     </div>
                 </div>
