@@ -6,4 +6,5 @@ const NoPage = () => {
 	);
 };
 
+export { NoPage };
 export default NoPage;

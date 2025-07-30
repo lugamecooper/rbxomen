@@ -1,12 +1,12 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Layout from "./pages/Layout";
-import Home from "./pages/Home";
-import Contact from "./pages/Contact";
-import NoPage from "./pages/NoPage";
-import Game from "./pages/Game";
-import Jobs from "./pages/Jobs";
-import Support from "./pages/Support";
-import History from "./pages/History";
+import { Layout } from "./pages/Layout";
+import { Home } from "./pages/Home";
+import { Contact } from "./pages/Contact";
+import { NoPage } from "./pages/NoPage";
+import { Game } from "./pages/Game";
+import { Jobs } from "./pages/Jobs";
+import { Support } from "./pages/Support";
+import { History } from "./pages/History";
 
 const App = () => {
     return (
@@ -26,4 +26,5 @@ const App = () => {
     );
 }
 
+export { App };
 export default App;

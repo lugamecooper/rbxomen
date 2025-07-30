@@ -3,13 +3,17 @@ import { useEffect, useRef, useState } from "react";
 import { isMobile } from 'react-device-detect';
 import "../App.css";
 import config from "../contactConfig.json";
-import Footer from "../elements/Footer";
+import { Footer } from "../elements/Footer";
 
 const Layout = () => {
 
     const line1 = useRef(null);
     const line2 = useRef(null);
     const line3 = useRef(null);
+    const [ ClassHeader, setClassHeader ] = useState( "header" );
+    const [ logoHeader, setLogoHeader ] = useState("block");
+    const [ marginHeader, setMarginHeader ] = useState("30px");
+    const [ widthHeader, setWidthHeader ] = useState("50vw");
 
     const burgerMenu = (force = null) => {
         const list = document.getElementById( "myLinks" );
@@ -43,13 +47,22 @@ const Layout = () => {
         if ( isMobile ){
             setClassHeader( "header_mobile" );
             document.getElementById( "myLinks" ).style.display = "none";
+            setLogoHeader("none");
+            setMarginHeader("60px");
+            setWidthHeader("70vw");
             return true;
         }else if( window.innerWidth < 600 ){
             setClassHeader( "header_mobile" )
             document.getElementById( "myLinks" ).style.display = "none";
+            setLogoHeader("none");
+            setMarginHeader("60px");
+            setWidthHeader("70vw");
             return true;
         }else{
             setClassHeader("header");
+            setLogoHeader("block");
+            setMarginHeader("30px");
+            setWidthHeader("50vw");
             return false;
         }
     }
@@ -76,7 +89,6 @@ const Layout = () => {
     const hoverElementRef = useRef( null );
     const targetElementRef = useRef( null );
     const [ isOverlapping, setIsOverlapping ] = useState( true );
-    const [ ClassHeader, setClassHeader ] = useState( "header" );
     
     const isHovering = ( element1, element2 ) => {
         if ( !element1 || !element2 ) {
@@ -119,7 +131,7 @@ const Layout = () => {
         <div style={ { backgroundImage : `url("/src/background/${Background}")` } } className="globalDiv">
             <div>
                 <div ref={ hoverElementRef } className={ ClassHeader } style={ { backgroundColor: isOverlapping ? "#ffffff00" : "rgb(51, 48, 48)" } }>
-                    <Link className="logo" to="/"><img alt="logo omen dev" src="/src/logo_omen_dev.png"></img></Link>
+                    <Link className="logo" to="/"><img alt="logo omen dev" src="/src/logo_omen_dev.png"/></Link>
                     <div className="extanded">    
                         {
                         //<Link to="/jobs">jobs</Link>
@@ -149,13 +161,18 @@ const Layout = () => {
                     </div>
                 </div>
                 <div ref={targetElementRef} className="welcomeDiv">
+                    <div style={ { marginTop : marginHeader, width: widthHeader } }>
+                        <img alt="logo header" src="/src/placeholder.jpg" style={ { width: widthHeader } }/>
+                        <p>Omen dev is an independent roblox development studio</p>
+                    </div>
+                    <img id="logo" alt="omenDev logo" src="/src/logo_omen_dev.png"  style={ { display : logoHeader } }/>
                 </div>
-                <Outlet>
-                </Outlet>
+                <Outlet/>
             </div>
             <Footer email={ config["email"] }></Footer>
         </div>
     );
 };
 
+export { Layout };
 export default Layout;

@@ -1,12 +1,10 @@
-import Developpers from "../elements/Developpers";
+import { Developpers } from "../elements/Developpers";
 import config from "../contactConfig.json";
-import Title from "../elements/Title";
+import { Title } from "../elements/Title";
 
 const Home = () => {
 	const imageGenerator = ( imageConstructor ) => {
-		return imageConstructor.map( ( [link, image, name], index ) => (
-		<Developpers key={index} link={link} image={image} name={name}/>
-		));
+		return imageConstructor.map( ( [link, image, name], index ) => ( <Developpers key={index} link={link} image={image} name={name}/> ) );
 	};
 
 	return (
@@ -30,4 +28,5 @@ const Home = () => {
 	);
 };
 
+export { Home };
 export default Home;

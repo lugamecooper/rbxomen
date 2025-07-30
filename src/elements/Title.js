@@ -8,4 +8,5 @@ const Title = ({ text }) =>{
     )
 }
 
-export default Title
+export { Title };
+export default Title;

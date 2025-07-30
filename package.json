@@ -16,7 +16,10 @@
     "scripts": {
         "start": "react-scripts start",
         "compile": "react-scripts build",
-        "server": "serve -s build -l 80"
+        "server": "serve -s build -l 80",
+        "linux":"",
+        "powershell":"",
+        "cmd":""
     },
     "eslintConfig": {
         "extends": [
