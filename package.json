@@ -17,9 +17,8 @@
         "start": "react-scripts start",
         "compile": "react-scripts build",
         "server": "serve -s build -l 80",
-        "linux":"",
-        "powershell":"",
-        "cmd":""
+        "lunch": "npm run compile && npm run server",
+        "update": "git fetch && git pull"
     },
     "eslintConfig": {
         "extends": [

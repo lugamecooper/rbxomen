@@ -18,9 +18,6 @@ const Layout = () => {
     const burgerMenu = (force = null) => {
         const list = document.getElementById( "myLinks" );
         if ( list.style.display === "block" || force === "true") {
-            console.log('hide');
-            console.log(list.style.display)
-            console.log(force)
             list.style.display = "none";
             line1.current.style.transform = '';
             line1.current.style.width = '';
@@ -30,8 +27,6 @@ const Layout = () => {
             line3.current.style.width = '';
             line3.current.style.height = '';
         } else {
-            console.log('display');
-            console.log(list.style.display)
             list.style.display = "block";
             line1.current.style.transform = 'translateY(6px) rotate(45deg)';
             line1.current.style.width = '18.5px';
